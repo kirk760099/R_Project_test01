@@ -23,10 +23,17 @@ shinyServer(function(input, output) {
     
   })
   output$testPlot <- renderPlot({
-    x <- faithful[1,test]
-    
-    
+    #generate bins from ui.R
+    x <- faithful[,2]
+    bins <- seq(min(x),max(x),length.out = input$test )
+    #draw the histogram
+    hist(x,breaks =bins ,col='blue',border ='yellow')
     
   })
+  output$text1 <- renderText({
+  paste('Your input:',input$text)    
+  })    
+    
   
-})
+  
+})#shinyServer

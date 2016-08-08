@@ -23,7 +23,14 @@ shinyUI(fluidPage(
                    min = 1,
                    max = 50,
                    value = 30),
-       numericInput("test","Observations",10,min=1,max=10)
+       numericInput("test",
+                    "Observations",
+                    10,
+                    min=1,
+                    max=10),
+       textInput("text", 
+                 "Caption:", 
+                 "Data Summary")
     
        ),
     
@@ -31,7 +38,8 @@ shinyUI(fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
        plotOutput("distPlot"),
-       plotOutput("testPlot")
+       plotOutput("testPlot"),
+       textOutput("text1")
     )
   )
 ))

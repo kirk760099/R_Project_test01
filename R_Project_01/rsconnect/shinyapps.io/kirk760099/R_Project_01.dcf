@@ -2,8 +2,8 @@ name: R_Project_01
 account: kirk760099
 server: shinyapps.io
 appId: 118954
-bundleId: 526518
+bundleId: 526547
 url: https://kirk760099.shinyapps.io/R_Project_01/
-when: 1470646660.1518
+when: 1470649935.69516
 asMultiple: FALSE
 asStatic: FALSE
