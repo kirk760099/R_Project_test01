@@ -24,20 +24,21 @@ alldata = data.frame()
   {
     html = getURL(pttURL, ssl.verifypeer = FALSE)
     
-#    xml = htmlParse(html, encoding ='utf-8')
+    xml = htmlParse(html, encoding ='utf-8')
 #    title = xpathSApply(xml, "//div[@class='title']/a//text()", xmlValue)
 #    author = xpathSApply(xml, "//div[@class='author']", xmlValue)
 #    path = xpathSApply(xml, "//div[@class='title']/a//@href")
 #    date = xpathSApply(xml, "//div[@class='date']", xmlValue)
 #    response = xpathSApply(xml, "//div[@class='nrec']", xmlValue)
 
-    xml = htmlParse(html, encoding = 'utf-8')
-    title = xpathSApply(xml,"//map//area[@title]/@title")
+#    xml = htmlParse(html, encoding = 'utf-8')
+#    title = xpathSApply(xml,"//map//area[@title]/@title")
     path = xpathSApply(xml,"//map//area[@title]/@href")
     
 #    tempdata = data.frame(title, author, path, date, response)
-    tempdata = data.frame(title,path)
-     alldata = rbind(alldata, tempdata)
+#    tempdata = data.frame(title,path)
+     tempdata = data.frame(path) 
+    alldata = rbind(alldata, tempdata)
   }
 #}
 
@@ -47,6 +48,6 @@ alldata = data.frame()
 #axis(2, at=1:max(res$counts), labels=1:max(res$counts))
 
 # write data to csv file
-write.csv(alldata, 'alldata_qi.csv')
+write.csv(alldata, 'alldata_path.csv')
 
 
